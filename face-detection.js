@@ -4,15 +4,21 @@ const detectFace = () => {
   const scale = img.width / img.naturalWidth;
   faceDetector
     .detect(img)
-    .then(faces => faces.map(face => face.boundingBox))
+    .then(faces => 
+      faces.map(face => face.boundingBox)
+    )
     .then(faceBoxes => {
       faceBoxes.forEach(faceBox => {
-        const { height, width, top, left } = faceBox;
-        const div = drawFaceBox(height, width, top, left, scale);
+        const { 
+          height, width, top, left 
+        } = faceBox;
+        const div = drawFaceBox(
+          height, width, top, left, scale
+        );
         img.parentElement.appendChild(div);
       });
     })
-    .catch(w => console.log('Something Went Wrong', w));
+    .catch(err => console.log(err));
 };
 
 const drawFaceBox = (height, width, top, left, scale) => {
