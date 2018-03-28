@@ -1,7 +1,9 @@
 const detectFace = () => {
+  if(!window.FaceDetector) return console.log('Unsupported Version or Feature is not enabled')
   const img = document.querySelector('#targetImg');
   const faceDetector = new FaceDetector();
   const scale = img.width / img.naturalWidth;
+  clearFaceBox();
   faceDetector
     .detect(img)
     .then(faces => 
@@ -38,10 +40,8 @@ const clearFaceBox = () => {
 };
 
 window.onload = () => {
-  clearFaceBox();
   detectFace();
 };
 window.onresize = () => {
-  clearFaceBox();
   detectFace();
 };
