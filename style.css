@@ -11,12 +11,26 @@ body {
 }
 
 .container {
-  width: 90%;
+  height: 100vh;
+  width: 85vw;
   margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center; 
+}
+.row {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center; 
 }
 
 #imageContainer {
   position: relative;
+  max-width: 500px;
+  margin: auto;
 }
 
 .image {
