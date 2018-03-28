@@ -8,6 +8,8 @@
 
 body {
   overflow-x: hidden;
+  background-color: #e17055;
+  color: #fff;
 }
 
 .container {
@@ -17,25 +19,57 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
 }
 .row {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
+}
+
+.input-row {
+  align-self: baseline;
 }
 
 #imageContainer {
   position: relative;
-  max-width: 500px;
+  max-width: 400px;
   margin: auto;
 }
 
-.image {
+.image[src] {
   height: 100%;
   width: 100%;
+  border: 5px solid #000000;
+  border-radius: 5px;
+  box-shadow: 10px 11px 11px rgba(0, 0, 0, 0.32);
+}
+
+.image:not([src]) {
+  display: block;
+  width: 250px;
+  height: 250px;
+  visibility: hidden;
+}
+
+.image:not([src])::after {
+  content: 'Click here to add pic';
+  text-indent: 10px;
+  display: flex;
+  position: absolute;
+  color: #000;
+  z-index: 90;
+  height: 250px;
+  width: 250px;
+  font-size: 20px;
+  background-color: #dfe6e9;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 6px 8px 7px 0px rgba(0, 0, 0, 0.32);
+  visibility: visible;
 }
 
 .face-box {
