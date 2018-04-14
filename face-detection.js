@@ -3,6 +3,7 @@
 
   const detectFace = () => {
     const img = document.querySelector('#targetImg');
+    if (!img.getAttribute('src')) return;
     const faceDetector = new FaceDetector();
     const scale = img.width / img.naturalWidth;
     clearFaceBox();
@@ -10,13 +11,14 @@
       .detect(img)
       .then(faces => faces.map(face => face.boundingBox))
       .then(faceBoxes => {
+        if (faceBoxes.length === 0) alert('Sorry! No Face is detected');
         faceBoxes.forEach(faceBox => {
           const { height, width, top, left } = faceBox;
           const div = drawFaceBox(height, width, top, left, scale);
           img.parentElement.appendChild(div);
         });
       })
-      .catch(err => console.log(err));
+      .catch(err => console.log(err) || alert(err));
   };
 
   const drawFaceBox = (height, width, top, left, scale) => {

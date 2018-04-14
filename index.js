@@ -9,7 +9,10 @@
 
   fileReader.addEventListener('load', e => {
     targetImg.setAttribute('src', e.target.result);
-    setTimeout(() => detectFace(), 0);
+  });
+
+  targetImg.addEventListener('load', () => {
+    detectFace();
   });
 
   imageInput.addEventListener('change', () => {
@@ -27,17 +30,20 @@
       errorMsg = `
           FaceDetector is an experimental feature of Chrome. 
           <br><br> 
-          Turn on'Experimental Web Platform Features' flag from 
+          Turn on 'Experimental Web Platform Features' flag from 
             <br>
             <code><u>chrome://flags/#enable-experimental-web-platform-features</u></code>
             <br><br>
           and Make sure Chrome is up-to-date.
           <br><br><br>
-          Hit refresh once you've done! :D
+          Hit refresh once you've done! :)
         `;
     } else {
-      errorMsg =
-        'FaceDetector API is only avalable in Google Chrome. <br><br> Use Google Chrome instead';
+      errorMsg = `
+          FaceDetector API is only avalable in Google Chrome. 
+          <br><br> 
+          Use Google Chrome instead
+        `;
     }
 
     notSupportedArea.innerHTML = errorMsg || 'This browser is not supported.';
@@ -46,7 +52,6 @@
 
   fileUploadBtn.addEventListener('click', () => imageInput.click());
   targetImg.addEventListener('dblclick', () => imageInput.click());
-
-  // window.onload = () => detectFace();
+  targetImg.addEventListener('touchend', () => imageInput.click());
   window.onresize = () => detectFace();
 })();
