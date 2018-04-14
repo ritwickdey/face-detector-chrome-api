@@ -1,6 +1,5 @@
 (function() {
-  if (!window.FaceDetector)
-    return console.log('Unsupported Version or Feature is not enabled');
+  if (!window.FaceDetector) return;
 
   const detectFace = () => {
     const img = document.querySelector('#targetImg');
@@ -36,5 +35,5 @@
     [...document.getElementsByClassName('face-box')].forEach(e => e.remove());
   };
 
-  window.detectFace =  detectFace;
+  window.detectFace = detectFace;
 })();

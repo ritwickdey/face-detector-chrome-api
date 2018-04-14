@@ -110,3 +110,13 @@ body {
   transform: translateY(0.3rem);
   box-shadow: 3px 4px 7px rgba(0, 0, 0, 0.3);
 }
+
+#not-supported-area {
+  display: none;
+  font-size: 2rem;
+  text-align: center;
+}
+
+#not-supported-area > * {
+  color: inherit;
+}
