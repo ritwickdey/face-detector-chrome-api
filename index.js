@@ -3,9 +3,12 @@
   const targetImg = document.querySelector('#targetImg');
   const fileReader = new FileReader();
 
+  if (typeof detectFace === 'undefined')
+    throw new Error('Unable to load face-detection.js');
+
   fileReader.addEventListener('load', e => {
     targetImg.setAttribute('src', e.target.result);
-    setTimeout(() => detectFace && detectFace(), 0)
+    setTimeout(() => detectFace(), 0);
   });
 
   imageInput.addEventListener('change', () => {
@@ -13,6 +16,12 @@
     if (file) fileReader.readAsDataURL(file);
   });
 
-  targetImg.addEventListener('click', () => imageInput.click(), { once: true })
+  targetImg.addEventListener('click', () => imageInput.click(), { once: true });
 
+  window.onload = () => {
+    detectFace();
+  };
+  window.onresize = () => {
+    detectFace();
+  };
 })();
