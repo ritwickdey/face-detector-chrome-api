@@ -7,7 +7,8 @@
 }
 
 html {
-  font-size: 10px;
+  font-size: 62.5%;
+  font-family: Helvetica, sans-serif;
 }
 
 body {
@@ -86,4 +87,26 @@ body {
   min-width: 2.5rem;
   min-height: 2.5rem;
   border: 0.3rem solid rgb(241, 21, 21);
+}
+
+.btn {
+  font-size: 1.6rem;
+  padding: 0.8rem 1.6rem;
+  border: 1px solid #f2f2f2;
+  border-radius: 0.6rem;
+  box-shadow: 4px 6px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-in-out;
+  background-color: #17a598;
+  color: #f2f2f2;
+  cursor: pointer;
+  outline: none;
+}
+
+.btn:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 6px 9px 17px rgba(0, 0, 0, 0.3);
+}
+.btn:active {
+  transform: translateY(0.3rem);
+  box-shadow: 3px 4px 7px rgba(0, 0, 0, 0.3);
 }
