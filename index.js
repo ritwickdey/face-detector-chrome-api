@@ -18,13 +18,8 @@
   });
 
   fileUploadBtn.addEventListener('click', () => imageInput.click());
-  targetImg.addEventListener('click', () => imageInput.click());
+  targetImg.addEventListener('dblclick', () => imageInput.click());
 
-  window.onload = () => {
-    detectFace();
-  };
-  
-  window.onresize = () => {
-    detectFace();
-  };
+  window.onload = () => detectFace();
+  window.onresize = () => detectFace();
 })();
