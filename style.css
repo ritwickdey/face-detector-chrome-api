@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 10px;
+}
+
 body {
   overflow-x: hidden;
   background-color: #e17055;
@@ -35,47 +39,51 @@ body {
 
 #imageContainer {
   position: relative;
-  max-width: 400px;
+  max-width: 40rem;
   margin: auto;
 }
 
 .image[src] {
   height: 100%;
   width: 100%;
-  border: 5px solid #000000;
-  border-radius: 5px;
-  box-shadow: 10px 11px 11px rgba(0, 0, 0, 0.32);
+  border: 0.5rem solid #000000;
+  border-radius: 0.5rem;
+  box-shadow: 1rem 1.1rem 1.1rem rgba(0, 0, 0, 0.32);
 }
 
 .image:not([src]) {
   display: block;
-  width: 250px;
-  height: 250px;
+  width: 25rem;
+  height: 25rem;
   visibility: hidden;
 }
 
+.hidden {
+  display: none;
+}
+
 .image:not([src])::after {
-  content: 'Click here to add pic';
-  text-indent: 10px;
+  content: '+';
+  text-indent: 1rem;
   display: flex;
   position: absolute;
-  color: #000;
+  color: #666;
   z-index: 90;
-  height: 250px;
-  width: 250px;
-  font-size: 20px;
+  height: 25rem;
+  width: 25rem;
+  font-size: 15rem;
   background-color: #dfe6e9;
   justify-content: center;
   align-items: center;
-  border-radius: 10px;
-  box-shadow: 6px 8px 7px 0px rgba(0, 0, 0, 0.32);
+  border-radius: 1rem;
+  box-shadow: 0.6rem 0.8rem 0.7rem 0rem rgba(0, 0, 0, 0.32);
   visibility: visible;
 }
 
 .face-box {
   position: absolute;
   display: inline-block;
-  min-width: 25px;
-  min-height: 25px;
-  border: 3px solid rgb(241, 21, 21);
+  min-width: 2.5rem;
+  min-height: 2.5rem;
+  border: 0.3rem solid rgb(241, 21, 21);
 }

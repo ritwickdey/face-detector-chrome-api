@@ -1,6 +1,7 @@
 (function() {
   const imageInput = document.querySelector('#imageInput');
   const targetImg = document.querySelector('#targetImg');
+  const fileUploadBtn = document.querySelector('#fileUploadBtn');
   const fileReader = new FileReader();
 
   if (typeof detectFace === 'undefined')
@@ -16,11 +17,13 @@
     if (file) fileReader.readAsDataURL(file);
   });
 
-  targetImg.addEventListener('click', () => imageInput.click(), { once: true });
+  fileUploadBtn.addEventListener('click', () => imageInput.click());
+  targetImg.addEventListener('click', () => imageInput.click());
 
   window.onload = () => {
     detectFace();
   };
+  
   window.onresize = () => {
     detectFace();
   };
