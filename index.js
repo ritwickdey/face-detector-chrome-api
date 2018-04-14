@@ -12,8 +12,6 @@
     setTimeout(() => detectFace(), 0);
   });
 
-  window.open(`chrome://flags/#enable-experimental-web-platform-features`);
-
   imageInput.addEventListener('change', () => {
     const file = imageInput.files[0];
     if (file) fileReader.readAsDataURL(file);
@@ -49,6 +47,6 @@
   fileUploadBtn.addEventListener('click', () => imageInput.click());
   targetImg.addEventListener('dblclick', () => imageInput.click());
 
-  window.onload = () => detectFace();
+  // window.onload = () => detectFace();
   window.onresize = () => detectFace();
 })();
