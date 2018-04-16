@@ -1,0 +1,12 @@
+language: generic
+
+deploy:
+  provider: pages
+  skip_cleanup: false
+  github_token: $github_token
+  local_dir: ./src
+  email: ritwickdey@outlook.com
+  name: Ritwick Dey
+  target-branch: gh-pages
+  on:
+    branch: master
